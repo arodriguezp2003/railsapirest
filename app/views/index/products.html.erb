@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        SKU
+      </th>
+      <th>
+        Descripcion
+      </th>
+      <th>
+        Precio
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @products.each do |p| %>
+    <tr>
+      <td>
+        <%= p[:sku] %>
+      </td>
+      <td>
+        <%= p[:description] %>
+      </td>
+      <td>
+        <%= p[:price] %>
+      </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>

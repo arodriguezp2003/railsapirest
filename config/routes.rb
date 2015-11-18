@@ -9,7 +9,7 @@ Rails.application.routes.draw do
        get '/', to: "restapi#index"
        get '/products', to: "restapi#products"
        get '/product/:id', to: "restapi#product"
-
+       post '/product/add', to: "restapi#add"
      end
    end
 

@@ -16,6 +16,25 @@ module Api
             render json: {result: "ACK" , obj: product[0]}
           end
         end
+				def add
+					sku = params[:sku]
+					description = params[:description]
+					price = params[:price]
+
+					product = Product.where(sku: sku)
+
+					if product.count > 0
+						render json: {result: "NACK", message: "El Producto ya esta ingresado"}
+					else
+						product = Product.create(sku: sku, description: description, price: price)
+						if product.save
+							render json: {result: "ACK", obj: product}
+						else
+							render json: {result: "NACK", message: "Ocurrio un error, vuelva a intentar"}
+						end
+					end
+
+				end
     end
   end
 end

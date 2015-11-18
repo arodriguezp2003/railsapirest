@@ -1,3 +1,37 @@
-<h1>Index#welcome</h1>
-<p>Find me in app/views/index/welcome.html.erb</p>
-<a href="/products">ir a productos</a>
+
+<h1>Bienvenido al Realtime</h1>
+
+
+<div ng-app="realtime">
+  <div ng-controller="indexController">
+
+
+    <input ng-model="product.sku" type="numeric" placeholder="ingrese SKU">
+    <input ng-model="product.description" type="text" placeholder="Ingrese description">
+    <input ng-model="product.price" type="numeric" placeholder="Ingese Precio">
+    <button ng-click="save()">Guardar</button>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>SKU</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="p in products">
+        <td>{{p.sku}}</td>
+        <td>{{p.description}}</td>
+        <td>{{p.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+</div>
+<script src="http://192.168.1.111:5001/socket.io/socket.io.js"></script>
+<script src="/lib/angular/angular.min.js"></script>
+<script src="/js/app.js"></script>

@@ -50,3 +50,4 @@ end
 
 gem 'responders', '~> 2.0'
 gem 'rack-cors'
+gem 'redis'
